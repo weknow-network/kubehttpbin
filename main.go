@@ -14,6 +14,7 @@ func main() {
 	port := flag.Int("port", 8080, "the port to listen on")
 
 	router := mux.NewRouter()
+	router.HandleFunc("/ip", handlers.IP).Methods("GET")
 	router.HandleFunc("/get", handlers.Get).Methods("GET")
 	router.HandleFunc("/post", handlers.Post).Methods("POST")
 	router.HandleFunc("/put", handlers.Put).Methods("PUT")
