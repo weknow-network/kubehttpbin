@@ -6,51 +6,21 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/arschles/kubehttpbin/handlers"
 	"github.com/gorilla/mux"
 )
-
-func get(resp http.ResponseWriter, req *http.Request) {
-	m := getBase(req)
-	output(resp, m)
-}
-
-func post(resp http.ResponseWriter, req *http.Request) {
-	m := getBase(req)
-	m[DataKey] = string(readBody(req))
-	output(resp, m)
-}
-
-func put(resp http.ResponseWriter, req *http.Request) {
-	m := getBase(req)
-	m[DataKey] = string(readBody(req))
-	output(resp, m)
-}
-
-func delete(resp http.ResponseWriter, req *http.Request) {
-	m := getBase(req)
-	output(resp, m)
-}
-
-func head(resp http.ResponseWriter, req *http.Request) {
-	m := getBase(req)
-	output(resp, m)
-}
-
-func patch(resp http.ResponseWriter, req *http.Request) {
-	m := getBase(req)
-	output(resp, m)
-}
 
 func main() {
 	port := flag.Int("port", 8080, "the port to listen on")
 
 	router := mux.NewRouter()
-	router.HandleFunc("/get", get).Methods("GET")
-	router.HandleFunc("/post", post).Methods("POST")
-	router.HandleFunc("/put", put).Methods("PUT")
-	router.HandleFunc("/delete", delete).Methods("DELETE")
-	router.HandleFunc("/head", head).Methods("HEAD")
-	router.HandleFunc("/patch", patch).Methods("PATCH")
+	router.HandleFunc("/get", handlers.Get).Methods("GET")
+	router.HandleFunc("/post", handlers.Post).Methods("POST")
+	router.HandleFunc("/put", handlers.Put).Methods("PUT")
+	router.HandleFunc("/delete", handlers.Delete).Methods("DELETE")
+	router.HandleFunc("/head", handlers.Head).Methods("HEAD")
+	router.HandleFunc("/patch", handlers.Patch).Methods("PATCH")
+	router.HandleFunc("/headers", handlers.Headers).Methods("GET")
 
 	hostStr := fmt.Sprintf(":%d", *port)
 	log.Printf("kubehttpbin listening on %s", hostStr)
