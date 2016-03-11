@@ -3,7 +3,10 @@ kind: Service
 metadata:
   name: kubehttpbin
   namespace: kubehttpbin
+  labels:
+    app: kubehttpbin
 spec:
+  type: LoadBalancer
   ports:
     - name: http
       port: 80
