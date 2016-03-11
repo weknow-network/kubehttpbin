@@ -1,0 +1,10 @@
+hash: 266cfb63d29764b4c24a838ac6892bbc3264aed54a335cc38f164a1f6cfe3b45
+updated: 2016-03-11T09:46:48.386892586-08:00
+imports:
+- name: github.com/franela/goblin
+  version: 889391d730237f8aca06ce3e62975112983f96b4
+- name: github.com/gorilla/context
+  version: 1ea25387ff6f684839d82767c1733ff4d4d15d0a
+- name: github.com/gorilla/mux
+  version: acf3be1b335c8ce30b2c8d51300984666f0ceefa
+devImports: []

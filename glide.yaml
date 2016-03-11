@@ -1,0 +1,4 @@
+package: github.com/arschles/kubehttpbin
+import:
+- package: github.com/gorilla/mux
+- package: github.com/franela/goblin
