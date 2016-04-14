@@ -1,17 +1,25 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"log"
 	"net/http"
+	"os"
+	"strconv"
 
 	"github.com/arschles/kubehttpbin/handlers"
 	"github.com/gorilla/mux"
 )
 
+const (
+	defaultPort = 8080
+)
+
 func main() {
-	port := flag.Int("port", 8080, "the port to listen on")
+	port, err := strconv.Atoi(os.Getenv("PORT"))
+	if err != nil {
+		port = defaultPort
+	}
 
 	router := mux.NewRouter()
 	router.HandleFunc("/ip", handlers.IP).Methods("GET")
@@ -23,7 +31,7 @@ func main() {
 	router.HandleFunc("/patch", handlers.Patch).Methods("PATCH")
 	router.HandleFunc("/headers", handlers.Headers).Methods("GET")
 
-	hostStr := fmt.Sprintf(":%d", *port)
+	hostStr := fmt.Sprintf(":%d", port)
 	log.Printf("kubehttpbin listening on %s", hostStr)
 	http.ListenAndServe(hostStr, router)
 
