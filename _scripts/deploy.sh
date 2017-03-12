@@ -19,4 +19,4 @@ export KUBECONFIG=./kubeconfig
 curl -o helm https://storage.googleapis.com/kubernetes-helm/helm-v2.2.2-darwin-amd64.tar.gz
 chmod +x helm
 LAST_RELEASE=$(helm list -q)
-helm upgrade $LAST_RELEASE ../chart
+./helm upgrade $LAST_RELEASE ../chart
