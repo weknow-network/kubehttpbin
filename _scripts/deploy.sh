@@ -18,7 +18,9 @@ export KUBECONFIG=./kubeconfig
 # download the helm CLI and calling 'helm upgrade'
 HELM_DOWNLOAD_URL="https://storage.googleapis.com/kubernetes-helm/helm-v2.2.2-linux-amd64.tar.gz"
 echo "downloading $HELM_DOWNLOAD_URL"
-curl -o helm $HELM_DOWNLOAD_URL
-chmod +x helm
+curl -o helm.tar.gz $HELM_DOWNLOAD_URL
+tar -zxvf helm.tar.gz
+mv linux-amd64/helm ./helm
+chmod +x ./helm
 LAST_RELEASE=$(helm list -q)
 ./helm upgrade $LAST_RELEASE ../chart
