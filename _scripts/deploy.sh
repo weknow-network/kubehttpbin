@@ -22,5 +22,5 @@ curl -o helm.tar.gz $HELM_DOWNLOAD_URL
 tar -zxvf helm.tar.gz
 mv linux-amd64/helm ./helm
 chmod +x ./helm
-LAST_RELEASE=$(helm list -q)
+LAST_RELEASE=$(./helm list -q)
 ./helm upgrade $LAST_RELEASE ../chart
