@@ -6,7 +6,7 @@ metadata:
   labels:
     app: kubehttpbin
 spec:
-  replicas: 3
+  replicas: {{.Values.numReplicas}}
   strategy:
     rollingUpdate:
       maxSurge: 1
