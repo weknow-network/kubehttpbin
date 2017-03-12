@@ -1,4 +1,6 @@
 package: github.com/arschles/kubehttpbin
 import:
-- package: github.com/gorilla/mux
-- package: github.com/franela/goblin
+- package: github.com/ahmetb/go-httpbin
+  version: 4ca994120406564e3a6ac8a177c194ac9ca3ae8b
+- package: github.com/pkg/errors
+  version: ~0.8.0

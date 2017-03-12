@@ -1,10 +1,12 @@
-hash: 266cfb63d29764b4c24a838ac6892bbc3264aed54a335cc38f164a1f6cfe3b45
-updated: 2016-03-11T09:46:48.386892586-08:00
+hash: 66189cbd6997979f3303b755d395796e21ba8911e3dd48bb372c390d09a6355b
+updated: 2017-03-12T09:21:59.960815327-07:00
 imports:
-- name: github.com/franela/goblin
-  version: 889391d730237f8aca06ce3e62975112983f96b4
+- name: github.com/ahmetb/go-httpbin
+  version: 4ca994120406564e3a6ac8a177c194ac9ca3ae8b
 - name: github.com/gorilla/context
-  version: 1ea25387ff6f684839d82767c1733ff4d4d15d0a
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
 - name: github.com/gorilla/mux
-  version: acf3be1b335c8ce30b2c8d51300984666f0ceefa
-devImports: []
+  version: 392c28fe23e1c45ddba891b0320b3b5df220beea
+- name: github.com/pkg/errors
+  version: 645ef00459ed84a119197bfb8d8205042c6df63d
+testImports: []
