@@ -1,7 +1,4 @@
 language: generic
-branches:
-  only:
-  - master
 cache:
   directories:
   - vendor
@@ -11,7 +8,7 @@ services:
 install:
 - make bootstrap
 script:
-  - make build test
+- make build test
 deploy:
   provider: script
   script: _scripts/deploy.sh
