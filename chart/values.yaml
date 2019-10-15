@@ -1,6 +1,15 @@
 containerPort: 8080
+servicePort: 80
 namespace: kubehttpbin
 numReplicas: 3
 dockerTag: devel
 dockerOrg: arschles
 dockerPullPolicy: Always
+
+
+ingress:
+  enabled: true
+  annotations:
+    # kubernetes.io/ingress.class: addon-http-application-routing
+  path: /httpbin
+  hostname: backend.weknow.network

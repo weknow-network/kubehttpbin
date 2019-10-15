@@ -5,6 +5,12 @@
 
 An [httpbin.org](http://httpbin.org) clone that you can host on your own Kubernetes cluster. This is a clone of [gohttpbin](https://github.com/arschles/gohttpbin), but designed to run on a Kubernetes cluster instead of Google App Engine.
 
-This project is based heavily upon [@ahmetb](https://github.com/ahmetb)'s 
+This project is based heavily upon [@ahmetb](https://github.com/ahmetb)'s
 [https://github.com/ahmetb/go-httpbin](go-httpbin project). It simply adds a running server,
 helm chart, and CI hooks to deploy to [kubehttpbin.org](http://kubehttpbin.org).
+
+Install
+
+<pre>
+Helm upgrade --set ingress.enabled=true --timeout 120 --install httpbin .
+</pre>
